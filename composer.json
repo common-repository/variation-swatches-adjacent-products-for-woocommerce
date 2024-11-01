@@ -1,0 +1,40 @@
+{
+    "name": "codesolz/woo-variation-swatches-adjacent-products",
+    "description": "WooCommerce advance similar product suggestion - Wordpress plugin",
+    "type": "composer-plugin",
+    "license": "mit",
+    "authors": [
+        {
+            "name": "M.Tuhin",
+            "email": "info@codesolz.net"
+        }
+    ],
+    "scripts": {
+        "build" : "composer install --no-dev",
+        "phpcs" : "bash ./vendor/bin/phpcs -i ",
+        "phpcsCheckError" : "bash ./vendor/bin/phpcs --standard=WordPress ./core ./woo-variation-swatches-adjacent-products.php",
+        "phpcsFixError" : "bash ./vendor/bin/phpcbf --standard=WordPress ./core ./woo-variation-swatches-adjacent-products.php",
+        "phpcsCheckPHPDetail" : "bash ./vendor/bin/phpcs --standard=PHPCompatibilityWP -p ./woo-variation-swatches-adjacent-products.php ./core --runtime-set testVersion 7.0-"
+    },
+    "autoload": {
+        "psr-4" : {
+            "WooVarSwatchesAdjacentProducts\\" : "core/"
+        },
+        "files": ["core/install/CheckDependencies.php"]
+    },
+    "require": {
+        "php" : ">=7.0.0"
+    },
+    "minimum-stability": "dev",
+    "require-dev": {
+        "wp-coding-standards/wpcs": "dev-master",
+        "dealerdirect/phpcodesniffer-composer-installer": "dev-master",
+        "phpcompatibility/php-compatibility": "^9.3",
+        "phpcompatibility/phpcompatibility-wp": "^2.1"
+    },
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    }
+}
